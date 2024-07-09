@@ -1,1 +1,8 @@
-...
+#Yahiris Enc. 24-1045
+datos = "oso,perro,10,5 son animales"
+
+
+partes = dato.split(',')
+
+oso = partes[0]
+perro = partes[1]
