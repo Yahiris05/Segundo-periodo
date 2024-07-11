@@ -1,1 +1,28 @@
-,
+# Leer 10 enteros, almacenarlos en una lista y determinar en qué posición del arreglo está el mayor número primo leído.
+
+def es_primo (n):
+  if n <= 1:
+    return False
+  if n ==2:
+    return True
+  if n % 2 == 0:
+    return False
+  for i in range (3, int(n**0.5)+1, 2):
+    if n % i == 0:
+      return False
+
+  return True
+
+mi_lista = []
+for i in range(10):
+  mi_lista.append(int(input("Ingrese un numero: ")))
+
+num_pri = [num for num in mi_lista if es_primo (num)]
+
+if num_pri:
+  mi_max_num_pri = max (num_pri)
+  mi_max_num_pri_index = mi_lista.index (mi_max_num_pri)
+  print("El numero primo mayor es: ", mi_max_num_pri," y esta en la posicion: ", mi_max_num_pri_index)
+  
+else: 
+  print("No hay numeros primos en la lista")
